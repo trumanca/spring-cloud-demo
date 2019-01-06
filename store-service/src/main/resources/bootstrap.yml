@@ -1,0 +1,12 @@
+server:
+  port: 8092
+spring:
+  application:
+    name: store-service
+  cloud:
+    consul:
+      config:
+        watch:
+          enabled: true
+      discovery:
+        instanceId: ${spring.application.name}:${random.value}

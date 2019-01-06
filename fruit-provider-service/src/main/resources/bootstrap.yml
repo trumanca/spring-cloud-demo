@@ -1,0 +1,15 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: fruit-provider-service
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+        watch:
+          enabled: true
+      discovery:
+        instanceId: ${spring.application.name}:${random.value}
